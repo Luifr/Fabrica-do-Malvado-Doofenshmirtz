@@ -7,53 +7,44 @@ using UnityEngine.UI;
 
 public class Assembler : MonoBehaviour
 {   
-    [System.Serializable]
-    private class Material
-    {
-        public int quantityNeeded;
-        public int quantityCollected;
-        public string name;
-    }
-
+    
 
     [SerializeField] private Material[] materialCheckList;
     private bool collectedSomething;
     [SerializeField] private float rageIncreased;
-    [SerializeField] private Text[] checkList;
+    [SerializeField] private CheckListElem[] checkList;
 
-
-     
 
     void Start()
     {
-        // trashEvent = TrashListener;
-        
+        initText();
     }
 
     void Update()
     {
-     
-            UpdateText();
-        
+        UpdateText();
     }
 
-    void TrashListener(string materialTag){
-        
+    void initText()
+    {
+        int i = 0;
+        foreach(Material materil in materialCheckList)
+        {
+            checkList[i].spriteRenderer.sprite = checkList[i].image;
+            i++;
+        }
     }
-
-
     void UpdateText()
     {
         int i = 0;
         foreach(Material material in materialCheckList)
         {
-            checkList[i].text = material.name + ": " + material.quantityCollected + "/" + material.quantityNeeded;
-            i+=1; 
+            checkList[i].textObject.text = ": " + material.quantityCollected + "/" + material.quantityNeeded;
+            i++;
         }
     }
     void OnTriggerEnter2D(Collider2D other)
     {   
-        
         foreach (Material material in materialCheckList)
         {   
             if((material.name == other.gameObject.tag) && (material.quantityNeeded > material.quantityCollected))
