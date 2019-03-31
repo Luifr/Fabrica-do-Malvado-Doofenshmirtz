@@ -7,6 +7,8 @@ TagManager:
   - EsteiraReta
   - Ferro
   - Laser
+  - Gelo
+  - Ima
   layers:
   - Default
   - TransparentFX

@@ -16,7 +16,9 @@ public class TrashBehaviour : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other){
         StartCoroutine(ChangeDirection(other.gameObject.GetComponent<MaterialMovement>()));
         StartCoroutine(Vanish(other.gameObject.transform));
-        Debug.Log(assemblerManager.MaterialNeeded(other.gameObject.tag));
+        if(assemblerManager.MaterialNeeded(other.gameObject.tag) == false){
+            Villain.rageLevel+=5;
+        }
     }
 
     IEnumerator ChangeDirection(MaterialMovement mm){

@@ -34,7 +34,7 @@ public class Treadmill : MonoBehaviour
     }
 
     IEnumerator ChangeDirection(MaterialMovement mm){
-        yield return new WaitForSeconds(0.13f);
+        yield return new WaitForSeconds(0.28f);
         mm.direction = direction;
     }
 

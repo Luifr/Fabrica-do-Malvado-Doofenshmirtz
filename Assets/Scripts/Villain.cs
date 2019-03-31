@@ -8,13 +8,17 @@ public class Villain : MonoBehaviour
     [SerializeField] private float maxRageLevel;
     public static float rageLevel;
     [SerializeField] private Animator anim;
+    AssemblerManager assemblers;
 
     void Start()
     {
+        assemblers = GameObject.Find("Assemblers").GetComponent<AssemblerManager>();
         anim  = GetComponent<Animator>();
+        StartCoroutine(CheckWin());
     }
     void Update()
     {
+        
         anim.SetFloat("rageLevel", rageLevel);
         if(rageLevel >= maxRageLevel)
         {
@@ -24,6 +28,16 @@ public class Villain : MonoBehaviour
 
     void DestroyFactory()
     {
-        print("APOCALIPSE!!");
+        //print("APOCALIPSE!!");
     }
+
+    IEnumerator CheckWin(){
+        while(1){
+            yield return new WaitForSeconds(1f);
+            if(assemblers.Done()){
+                //win
+            }
+        }
+    }
+
 }

@@ -64,11 +64,20 @@ public class Assembler : MonoBehaviour
 
     public bool MaterialNeeded(string mat){
         for(int i=0;i<materialCheckList.Length;i++){
-            if(materialCheckList[i].name == mat && materialCheckList[i].quantityCollected == materialCheckList[i].quantityCollected){
+            if(materialCheckList[i].name == mat && materialCheckList[i].quantityNeeded > materialCheckList[i].quantityCollected){
                 return true;
             }
         }
         return false;
+    }
+
+    bool IsDone(){
+        for(int i=0;i<materialCheckList.Length;i++){
+            if(materialCheckList[i].quantityCollected < materialCheckList[i].quantityNeeded){
+                return false;
+            }
+            return true;
+        }
     }
 
 }

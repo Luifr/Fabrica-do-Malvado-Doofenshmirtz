@@ -22,4 +22,13 @@ public class AssemblerManager : MonoBehaviour
         }
         return false;
     }
+
+    public bool Done(){
+        for(int i=0;i<assemblers.Length;i++){
+            if(!assemblers[i].Done()){
+                return false;
+            }
+        }
+        return true;
+    }
 }
