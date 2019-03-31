@@ -71,13 +71,13 @@ public class Assembler : MonoBehaviour
         return false;
     }
 
-    bool IsDone(){
+    public bool IsDone(){
         for(int i=0;i<materialCheckList.Length;i++){
             if(materialCheckList[i].quantityCollected < materialCheckList[i].quantityNeeded){
                 return false;
             }
-            return true;
         }
+        return true;
     }
 
 }

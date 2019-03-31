@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class Villain : MonoBehaviour
 {   
@@ -28,14 +28,14 @@ public class Villain : MonoBehaviour
 
     void DestroyFactory()
     {
-        //print("APOCALIPSE!!");
+        SceneManager.LoadScene("GameOver");
     }
 
     IEnumerator CheckWin(){
-        while(1){
+        while(true){
             yield return new WaitForSeconds(1f);
             if(assemblers.Done()){
-                //win
+                SceneManager.LoadScene("Victory");
             }
         }
     }

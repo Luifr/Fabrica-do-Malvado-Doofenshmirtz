@@ -7,6 +7,7 @@ public class GameOver : MonoBehaviour
 {
    public void TryAgain()
    {
+       Villain.rageLevel = 0;
        SceneManager.LoadScene("Level1");
    }
 

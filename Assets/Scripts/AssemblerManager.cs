@@ -25,7 +25,7 @@ public class AssemblerManager : MonoBehaviour
 
     public bool Done(){
         for(int i=0;i<assemblers.Length;i++){
-            if(!assemblers[i].Done()){
+            if(!assemblers[i].IsDone()){
                 return false;
             }
         }
