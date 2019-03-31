@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 329328378531681174}
   m_Layer: 0
   m_Name: Ferro
-  m_TagString: Untagged
+  m_TagString: Ferro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
