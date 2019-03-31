@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Assembler : MonoBehaviour
 {   
@@ -11,10 +12,21 @@ public class Assembler : MonoBehaviour
         public int quantityCollected;
         public string name;
     }
+    public delegate void TrashEvent(string s);
+    public TrashEvent trashEvent;
 
     [SerializeField] private Material[] materialCheckList;
     private bool collectedSomething;
      
+
+    void Start(){
+        trashEvent = TrashListener;
+    }
+
+    void TrashListener(string materialTag){
+        
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
        
@@ -35,5 +47,7 @@ public class Assembler : MonoBehaviour
         collectedSomething = false;
         GameObject.Destroy(other.gameObject);
     }
+
+
 
 }

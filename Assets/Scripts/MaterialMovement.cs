@@ -7,8 +7,8 @@ public class MaterialMovement : MonoBehaviour
     public float speed;
     public int direction;
     
-    float[] dirX = {1f,0f,-1f,0f};
-    float[] dirY = {0f,1f,0f,-1f};
+    float[] dirX = {1f,0f,-1f,0f,0f};
+    float[] dirY = {0f,1f,0f,-1f,0f};
     // Update is called once per frame
     void Update()
     {
