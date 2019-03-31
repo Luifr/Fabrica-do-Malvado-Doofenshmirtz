@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6738674098552168896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.21, y: 0.05, z: -0.052404113}
-  m_LocalScale: {x: 7.6898994, y: 7.6898994, z: 7.6898994}
+  m_LocalPosition: {x: 0, y: 0, z: -0.052404113}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 6738674098746790065}
   m_Father: {fileID: 0}
@@ -125,6 +125,7 @@ MonoBehaviour:
     quantityCollected: 0
     name: Ferro
   rageIncreased: 10
+  checkList: []
 --- !u!1 &6738674098746790066
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class Treadmill : MonoBehaviour
     SpriteRenderer treadmillSprite;
     [SerializeField]
     Sprite changedState;
+    public bool retaState=true;
 
     void Start(){
         treadmillSprite = gameObject.GetComponent<SpriteRenderer>();
@@ -31,13 +32,14 @@ public class Treadmill : MonoBehaviour
     }
 
     IEnumerator ChangeDirection(MaterialMovement mm){
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.13f);
         mm.direction = direction;
     }
 
     void OnMouseOver(){
         if(Input.GetMouseButtonDown(0) && isSwitchable){
             if(gameObject.CompareTag("EsteiraReta")){
+                retaState = !retaState;
                 Sprite aux = treadmillSprite.sprite;
                 treadmillSprite.sprite = changedState;
                 changedState = aux;
