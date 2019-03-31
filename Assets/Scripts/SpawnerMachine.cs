@@ -23,7 +23,7 @@ public class SpawnerMachine : MonoBehaviour
         {
             GameObject materiaPrima = materiasPrima[Random.Range(0,materiasPrima.Length)];
 
-            materiaPrima = Instantiate(materiaPrima, new Vector3(transform.position.x, transform.position.y, -0.1f), transform.rotation);
+            materiaPrima = Instantiate(materiaPrima, new Vector3(transform.position.x, transform.position.y-.5f, -0.1f), transform.rotation);
 
             materiaPrima.GetComponent<MaterialMovement>().Initialize(_direcao, initialSpeed);
              

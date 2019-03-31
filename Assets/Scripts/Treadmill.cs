@@ -10,8 +10,11 @@ public class Treadmill : MonoBehaviour
     int direction; //L=0, N=1, O=2, S=3
     [SerializeField]
     bool isSwitchable;
+    [SerializeField]
+    bool isUp;
     SpriteRenderer treadmillSprite;
-
+    [SerializeField]
+    Sprite changedState;
 
     void Start(){
         treadmillSprite = gameObject.GetComponent<SpriteRenderer>();
@@ -33,9 +36,23 @@ public class Treadmill : MonoBehaviour
     }
 
     void OnMouseOver(){
-        if(Input.GetMouseButtonDown(0) && isTurn && isSwitchable){
-            treadmillSprite.flipY = !treadmillSprite.flipY;
-            direction = (direction+2)%4;
+        if(Input.GetMouseButtonDown(0) && isSwitchable){
+            if(gameObject.CompareTag("EsteiraReta")){
+                Sprite aux = treadmillSprite.sprite;
+                treadmillSprite.sprite = changedState;
+                changedState = aux;
+                if(isUp){
+                    direction = (direction+1)%2;
+                }
+                else{
+                    treadmillSprite.flipY = !treadmillSprite.flipY;
+                    direction = (3-direction);
+                }
+            }
+            else if(isTurn){
+                treadmillSprite.flipY = !treadmillSprite.flipY;
+                direction = (direction+2)%4;
+            }
         }
     }
 
