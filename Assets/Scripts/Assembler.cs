@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
+
 
 public class Assembler : MonoBehaviour
 {   
@@ -12,12 +14,38 @@ public class Assembler : MonoBehaviour
         public int quantityCollected;
         public string name;
     }
+
+
     [SerializeField] private Material[] materialCheckList;
     private bool collectedSomething;
-
     [SerializeField] private float rageIncreased;
+    [SerializeField] private Text[] checkList;
+
+
      
 
+    void Start()
+    {
+        // trashEvent = TrashListener;
+        
+    }
+
+    void Update()
+    {
+        if(collectedSomething)
+        {
+            UpdateText();
+        }
+    }
+
+    void TrashListener(string materialTag){
+        
+    }
+
+    void UpdateText()
+    {
+        for
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         foreach (Material material in materialCheckList)
