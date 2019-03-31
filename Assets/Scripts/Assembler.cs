@@ -18,14 +18,6 @@ public class Assembler : MonoBehaviour
     [SerializeField] private float rageIncreased;
      
 
-    void Start(){
-        trashEvent = TrashListener;
-    }
-
-    void TrashListener(string materialTag){
-        
-    }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         foreach (Material material in materialCheckList)
