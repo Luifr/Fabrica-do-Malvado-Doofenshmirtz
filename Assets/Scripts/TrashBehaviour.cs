@@ -7,11 +7,16 @@ public class TrashBehaviour : MonoBehaviour
     
     [SerializeField]
     float scaleFactor=.1f;
+    AssemblerManager assemblerManager;
+
+    void Start(){
+        assemblerManager = GameObject.Find("Assemblers").GetComponent<AssemblerManager>();
+    }
 
     void OnTriggerEnter2D(Collider2D other){
         StartCoroutine(ChangeDirection(other.gameObject.GetComponent<MaterialMovement>()));
         StartCoroutine(Vanish(other.gameObject.transform));
-        // TIRAR O EVENTO, ADICIONAR O MANAGER DE EVENTO
+        Debug.Log(assemblerManager.MaterialNeeded(other.gameObject.tag));
     }
 
     IEnumerator ChangeDirection(MaterialMovement mm){

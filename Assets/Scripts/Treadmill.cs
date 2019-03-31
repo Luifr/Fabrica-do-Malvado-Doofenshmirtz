@@ -16,9 +16,11 @@ public class Treadmill : MonoBehaviour
     [SerializeField]
     Sprite changedState;
     public bool retaState=true;
+    Animator animator;
 
     void Start(){
         treadmillSprite = gameObject.GetComponent<SpriteRenderer>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -40,6 +42,7 @@ public class Treadmill : MonoBehaviour
         if(Input.GetMouseButtonDown(0) && isSwitchable){
             if(gameObject.CompareTag("EsteiraReta")){
                 retaState = !retaState;
+                animator.SetBool("state",retaState);
                 Sprite aux = treadmillSprite.sprite;
                 treadmillSprite.sprite = changedState;
                 changedState = aux;

@@ -61,4 +61,14 @@ public class Assembler : MonoBehaviour
         collectedSomething = false;
         GameObject.Destroy(other.gameObject);
     }
+
+    public bool MaterialNeeded(string mat){
+        for(int i=0;i<materialCheckList.Length;i++){
+            if(materialCheckList[i].name == mat && materialCheckList[i].quantityCollected == materialCheckList[i].quantityCollected){
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
