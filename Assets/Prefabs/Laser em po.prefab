@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 9064469514708537485}
   - component: {fileID: 329328378531681174}
   m_Layer: 0
-  m_Name: Ferro 1
-  m_TagString: Ferro
+  m_Name: Laser em po
+  m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,12 +134,12 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10, y: 10}
+    oldSize: {x: 0.90909094, y: 0.90909094}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.1}
+  m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
