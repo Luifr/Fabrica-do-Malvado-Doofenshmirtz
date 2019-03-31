@@ -42,9 +42,13 @@ public class Assembler : MonoBehaviour
         
     }
 
+    
     void UpdateText()
     {
-        for
+        foreach(Material material in materialCheckList)
+        {
+            checkList[i]
+        }
     }
     void OnTriggerEnter2D(Collider2D other)
     {
