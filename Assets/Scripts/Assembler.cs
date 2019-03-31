@@ -32,28 +32,30 @@ public class Assembler : MonoBehaviour
 
     void Update()
     {
-        if(collectedSomething)
-        {
+     
             UpdateText();
-        }
+        
     }
 
     void TrashListener(string materialTag){
         
     }
 
-    
+
     void UpdateText()
     {
+        int i = 0;
         foreach(Material material in materialCheckList)
         {
-            checkList[i]
+            checkList[i].text = material.name + ": " + material.quantityCollected + "/" + material.quantityNeeded;
+            i+=1; 
         }
     }
     void OnTriggerEnter2D(Collider2D other)
-    {
+    {   
+        
         foreach (Material material in materialCheckList)
-        {
+        {   
             if((material.name == other.gameObject.tag) && (material.quantityNeeded > material.quantityCollected))
             {
                 material.quantityCollected += 1;
