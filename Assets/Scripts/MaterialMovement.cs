@@ -13,7 +13,6 @@ public class MaterialMovement : MonoBehaviour
     void Update()
     {
         transform.position += new Vector3( dirX[direction], dirY[direction], 0) * speed * Time.deltaTime;
-   
     }
 
     public void Initialize(int rotationAngle, float initialSpeed) 

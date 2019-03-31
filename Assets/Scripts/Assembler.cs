@@ -11,17 +11,15 @@ public class Assembler : MonoBehaviour
         public int quantityCollected;
         public string name;
     }
-
     [SerializeField] private Material[] materialCheckList;
     private bool collectedSomething;
+
+    [SerializeField] private float rageIncreased;
      
     void OnTriggerEnter2D(Collider2D other)
     {
-       
-        name  = other.gameObject.tag;
         foreach (Material material in materialCheckList)
         {
-            Debug.Log(other.gameObject.tag);   
             if((material.name == other.gameObject.tag) && (material.quantityNeeded > material.quantityCollected))
             {
                 material.quantityCollected += 1;
@@ -30,10 +28,10 @@ public class Assembler : MonoBehaviour
         }
         if(!collectedSomething)
         {
-            print("rage++");
+            Villain.rageLevel += rageIncreased;
         }
+
         collectedSomething = false;
         GameObject.Destroy(other.gameObject);
     }
-
 }
