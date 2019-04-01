@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 
 public class Assembler : MonoBehaviour
-{   
-    
+{
 
     [SerializeField] private Material[] materialCheckList;
     private bool collectedSomething;
@@ -44,13 +43,13 @@ public class Assembler : MonoBehaviour
         }
     }
     void OnTriggerEnter2D(Collider2D other)
-    {   
+    {
         foreach (Material material in materialCheckList)
-        {   
+        {
             if((material.name == other.gameObject.tag) && (material.quantityNeeded > material.quantityCollected))
             {
                 material.quantityCollected += 1;
-                collectedSomething = true;  
+                collectedSomething = true;
             }
         }
         if(!collectedSomething)

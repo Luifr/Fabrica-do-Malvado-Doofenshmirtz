@@ -26,7 +26,7 @@ public class SpawnerMachine : MonoBehaviour
             materiaPrima = Instantiate(materiaPrima, new Vector3(transform.position.x, transform.position.y-.5f, -0.1f), transform.rotation);
 
             materiaPrima.GetComponent<MaterialMovement>().Initialize(_direcao, initialSpeed);
-             
+
             yield return new WaitForSeconds(spawnTime);
 
         }

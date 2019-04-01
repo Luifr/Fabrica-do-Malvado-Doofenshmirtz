@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrashBehaviour : MonoBehaviour
 {
-    
+
     [SerializeField]
     float scaleFactor=.1f;
     AssemblerManager assemblerManager;
@@ -16,8 +16,8 @@ public class TrashBehaviour : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other){
         StartCoroutine(ChangeDirection(other.gameObject.GetComponent<MaterialMovement>()));
         StartCoroutine(Vanish(other.gameObject.transform));
-        if(assemblerManager.MaterialNeeded(other.gameObject.tag) == false){
-            Villain.rageLevel+=5;
+        if(assemblerManager.MaterialNeeded(other.gameObject.tag) == true){
+            Villain.rageLevel+=2;
         }
     }
 
